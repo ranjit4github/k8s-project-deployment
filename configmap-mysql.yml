@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: dev
+data:
+  MYSQL_SERVICE_HOST: mysqldb-service
+  MYSQL_DATABASE: devopsclass
+  MYSQL_USER: ranjit

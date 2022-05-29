@@ -1,0 +1,52 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: mysqldb-service
+   namespace: dev
+spec:
+   ports:
+     - port: 3306
+   clusterIP: None
+   selector:
+      app: mysqldb
+      type: back-end
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysqldb-deployment
+  namespace: dev
+  labels:
+     app: mysqldb
+     type: back-end
+spec:
+  template:
+    metadata:
+     name: mysqldb-pod
+     labels:
+        app: mysqldb
+        type: back-end
+    spec:
+      containers:
+      - name: mysqldb
+        image: docker4ranjit/mysql:11
+        ports:
+          - containerPort: 3306
+        envFrom:
+          - configMapRef:
+                name: db-config
+          - secretRef:
+                name: db-secret
+        volumeMounts:
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-pv-claim
+  replicas: 1
+  selector:
+     matchLabels:
+        type: back-end

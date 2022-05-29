@@ -1,0 +1,9 @@
+pod/mysqldb-deployment-77fb4b76dd-dkfcg
+pod/tomcatweb-deployment-5f776f4597-4g55j
+pod/tomcatweb-deployment-5f776f4597-4ngkx
+service/mysqldb-service
+service/tomcat-service
+deployment.apps/mysqldb-deployment
+deployment.apps/tomcatweb-deployment
+replicaset.apps/mysqldb-deployment-77fb4b76dd
+replicaset.apps/tomcatweb-deployment-5f776f4597
