@@ -1,20 +1,4 @@
 ---
-apiVersion: v1
-kind: Service
-metadata:
-   name: tomcat-service
-   namespace: dev
-spec:
-   type: NodePort
-   ports:
-    - targetPort: 8080
-      port: 8080
-      nodePort: 30008
-   selector:
-      app: tomcatwebapp
-      type: front-end
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
