@@ -38,8 +38,8 @@ kubectl create -f mysql-pv.yml
 6. Now create pods using *replicaset*
 **Note:** The service and replicaset are added in one yaml file
 ```
-kubectl create -f replicasetDefinition-tomcat.yml
-kubectl create -f replicasetDefinition-mysqldb.yml
+kubectl create -f deploymentDefinition-tomcat.yml
+kubectl create -f deploymentDefinition-mysqldb.yml
 ```
 
 At this point your pods will be up and running.
