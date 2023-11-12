@@ -13,8 +13,8 @@ Go to the directory where you have kept all your yaml files.
 
 1. 1st create the images out of the Dockerfiles `Dockerfile-mysql` & `Dockerfile-tomcat`.
 ```
-docker build -t mysql:1.1 /path/to/dockerfile/Dockerfile-mysql .
-docker build -t loginwebapp:1.2 /path/to/dockerfile/Dockerfile-tomcat .
+docker build -t mysql:1.1 -f /path/to/dockerfile/Dockerfile-mysql .
+docker build -t loginwebapp:1.2 -f /path/to/dockerfile/Dockerfile-tomcat .
 ```
 2. Create a namespace where you want to run your pod
 ```
