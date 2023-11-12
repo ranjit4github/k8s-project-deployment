@@ -134,5 +134,5 @@ Events:                   <none>
 ```
 kubectl port-forward --address 0.0.0.0 svc/tomcat-service --namespace dev 30008:8080
 ```
-***http://<IP>:30008/LoginWebApp/***
+***http://43.204.229.231:30008/LoginWebApp/***
 
