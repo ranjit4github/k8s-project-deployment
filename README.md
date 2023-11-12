@@ -35,11 +35,16 @@ kubectl create -f secret-mysql.yml
 kubectl create -f mysql-pv.yml
 ```
 
-6. Now create pods using *replicaset*
-**Note:** The service and replicaset are added in one yaml file
+6. Now create pods using *deployment*
 ```
 kubectl create -f deploymentDefinition-tomcat.yml
 kubectl create -f deploymentDefinition-mysqldb.yml
+```
+7. Create service to connect to the application from outside.
+   **Note:** Here *NodePort* is used
+```
+kubectl create -f service-ui.yml
+kubectl create -f service-mysql.yml
 ```
 
 At this point your pods will be up and running.
