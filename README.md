@@ -130,3 +130,9 @@ Events:                   <none>
 
 *LoginWebApp* is your application name.
 
+## If you are using EC2 instance for the Kubernetes cluster then you need to do the port forwarding in order to access the application.
+```
+kubectl port-forward --address 0.0.0.0 svc/tomcat-service --namespace dev 30008:8080
+```
+***http://<IP>:30008/LoginWebApp/***
+
